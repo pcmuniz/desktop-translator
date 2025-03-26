@@ -10,8 +10,10 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
   });
+
+  win.setMenu(null);
 
   win.loadFile('index.html');
 
@@ -23,10 +25,10 @@ const createWindow = () => {
 function createTray() {
   tray = new Tray(path.join(__dirname, 'icon.png'));
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Mostrar App', click: () => { win.show(); } },
-    { label: 'Sair', click: () => { app.quit(); } }
+    { label: 'Open app', click: () => { win.show(); } },
+    { label: 'Close', click: () => { app.quit(); } }
   ]);
-  tray.setToolTip('Meu App');
+  tray.setToolTip('Translator');
   tray.setContextMenu(contextMenu);
 }
 
