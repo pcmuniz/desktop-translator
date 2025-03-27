@@ -28,7 +28,7 @@ function createTray() {
     { label: 'Open app', click: () => { win.show(); } },
     { label: 'Close', click: () => { app.quit(); } }
   ]);
-  tray.setToolTip('Translator');
+  tray.setToolTip('Desktop Translator');
   tray.setContextMenu(contextMenu);
 }
 

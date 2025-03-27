@@ -1,6 +1,7 @@
 async function translateText() {
     const text = document.getElementById("inputText").value;
     const outputText = document.getElementById("outputText");
+    const languageSelect = document.getElementById("languageSelect").value;
   
     try {
       const response = await fetch("http://localhost:8080/translate", {
@@ -11,7 +12,7 @@ async function translateText() {
         body: JSON.stringify({
           text: text,
           source_lang: "auto", 
-          target_lang: "PT",
+          target_lang: languageSelect,
         })
       });
   
